@@ -30,14 +30,14 @@ body {
 
 .Calculator .value {
     position: relative;
-    grid-column: span;
+    grid-column: span 4;
     height: 100px;
-    width: 100px;
+    width: 100%;
     border: none;
     outline: none;
     margin-bottom: 10px;
     border-radius: 10px;
-    text-align: center;
+    text-align: right;
     padding: 10px;
     font-size: 2em;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
@@ -57,6 +57,8 @@ body {
     font-weight: 40;
     text-align: center;
     align-items: center;
+    border-radius: 10px;
+    place-items: center;
 }
 
 .Calculator span i {
@@ -66,8 +68,34 @@ body {
     font-style: 1.5em;
 }
 
+.Calculator span:active {
+    filter: brightness(1.5);
+}
+
 .Calculator span::before {
     content: '';
     position: absolute;
     background: linear-gradient(180deg, #2d2d2d, #3d3d3d);
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1), 10px 5px 10px rgba(0, 0, 0, 0.15, );
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+
+.Calculator .clear {
+    grid-column: span 2;
+    width: 180px;
+    background: #f00;
+}
+
+.Calculator .clear::before {
+    background: linear-gradient(90deg, #d20000, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
 }
